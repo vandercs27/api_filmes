@@ -7,6 +7,7 @@ router.get("/", (req, res) => {
   res.render("inserir")
 })
 
+
 // Criar novo filme (inserção)
 router.post("/inserir", async (req, res) => {
   const { filme, ano, diretor, elenco, sinopse, curiosidades, imagem } = req.body

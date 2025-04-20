@@ -5,4 +5,5 @@ const sequelize = new Sequelize("terror_no_ar", "root", "", {
     dialect: "mysql"
 })
 
+
 module.exports = sequelize

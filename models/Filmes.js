@@ -24,8 +24,7 @@ const Filmes = db.define("Filmes", {
         allowNull: false
     },
 
-    
-    elenco: {
+     elenco: {
         type: DataTypes.STRING,
         allowNull: false
     },
