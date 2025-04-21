@@ -49,8 +49,12 @@
     padding: 10px;
     border: 1px solid white;
    
+   
 }
 
+.movieFound .filmeLista {
+    width: 100%;
+}
 .filme h3,
 .filmeLista h3 {
     color: orange;
@@ -59,20 +63,28 @@
 .filme p,
 .filmeLista p{
     margin: 40px 0;
-   align-items: center;
+    align-items: center;
     color: white;
-    width: 600px;
+    width: auto;
     font-size: 30px;
-    padding: 5px;
+    padding: 5px 0;
     
 }
 
 .movieFound,
 .filmeLista{
     
-  
+    width: 80%;
     padding: 0 auto;
+    height:auto;
+    margin: 0 5%;
     
+}
+
+.listaFilme {
+    display: block;
+    justify-content: center;
+    margin: 2em 0;
 }
 
 .movieFound h3{
@@ -87,28 +99,39 @@
     color: #ccc;
     margin: 0 auto;
     padding: 0 auto;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
 }
 
 .movieFound img {
     margin: 0 auto;
     background-color: #ccc;
+    height: 500px;
 }
 
 .desc {
+    margin:0 2% ;
     color: #ccc;
-    padding:1em  ;
+    padding:1em 0 ;
+    width: 500px;
+    height: auto;
 }
 
 .desc p {
+    margin: 5% 0;
+    padding: 2% 0;
     height: auto;
+    font-size: 18px;
     
 }
 
 
 
 .image {
-  
-    padding: 1em 3em;
+   
+   padding: 2%;
+   height: auto;
    
 }
 
