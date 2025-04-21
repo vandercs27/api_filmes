@@ -30,11 +30,12 @@ const Filmes = db.define("Filmes", {
     },
 
     sinopse: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(500),
         allowNull: false
+        
     },
     curiosidades: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(500  ),
         allowNull: false
     },
 

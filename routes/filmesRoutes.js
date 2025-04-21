@@ -91,4 +91,47 @@ router.post("/deletar", async (req, res) => {
   }
 })
 
+// atualizar
+router.get("/atualizar", (req, res) => {
+    res.render("atualizar")
+})
+
+router.post("/atualizar", async(req, res) => {
+  const { filme } = req.body
+
+  try{
+
+   const filmeBusca = await filmes.findOne({where: {filme}})
+
+    if(!filmeBusca){
+        console.log("filme nao encontrado!")
+        req.flash("error_msg", "Filme não encontrado.")
+    }
+
+    //remove os campos vazios
+    const camposAtualizar = {}
+
+    for(let campo in req.body){
+      if(req.body[campo] && campo !== "filme"){
+          camposAtualizar[campo] = req.body[campo]
+      }
+    }
+
+    // so atualiza se tiver campos para atualizar
+    if(Object.keys(camposAtualizar).length === 0){
+      req.flash("error_msg", "Nenhum campo para atualizar.");
+      return res.redirect("/atualizar");
+    }
+
+        await filmeBusca.update(camposAtualizar)
+        req.flash("success_msg", "Filme atualizado com sucesso!")
+        res.redirect("/atualizar")
+
+
+  }catch(error){
+    console.log("erro ao atualizar!", error)
+    return res.status(500).json({message: "erro ao atualizar!"})
+  }
+})
+
 module.exports = router
