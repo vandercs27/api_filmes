@@ -1,27 +1,20 @@
-
-  <div class="listaFilme">
-   <div class="listar">
-  <h2>LISTA DE TODOS OS FILMES</h2>
-
- <div class="movieFound">
-   {{#each listaFilmes}}
-  <h3>{{filme}}</h3>
-    <div class="filmeLista">
-      
-      <div class="image"> <img src="/imagens/{{imagem}}" alt="{{filme}}" height ="700px"></div>
-     <div class="desc">
-         <p><strong>Ano:</strong> {{ano}}</p>
-         <p><strong>Diretor:</strong> {{diretor}}</p>
-         <p><strong>elenco:</strong> {{elenco}}</p>
-         <p><strong>Sinopse:</strong> {{sinopse}}</p>
-         <p><strong>curiosidades:</strong> {{curiosidades}}</p>
-     </div>
-     
+<div class="listaFilme">
+  <div class="listar">
+    <h2>LISTA DE TODOS OS FILMES</h2>
+    <div class="movieFound">
+      {{#each listaFilmes}}
+      <div class="filmeLista">
+        <div class="image">
+          <img src="/imagens/{{imagem}}" alt="{{filme}}">
+        </div>
+        <div class="desc">
+          <h3 class="tituloFilme">{{filme}}</h3>
+          <p><strong>Ano:</strong> {{ano}}</p>
+          <p><strong>Diretor:</strong> {{diretor}}</p>
+          <p><strong>Elenco:</strong> {{elenco}}</p>
+        </div>
+      </div>
+      {{/each}}
     </div>
-  {{/each}}
- </div>
-</div>
-
   </div>
-
-   
+</div>

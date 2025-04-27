@@ -1,4 +1,22 @@
-<div class="busca">
+<div class="movieFound">
+   {{#each listaFilmes}}
+  <h3>{{filme}}</h3>
+    <div class="filmeLista">
+      
+      <div class="image"> <img src="/imagens/{{imagem}}" alt="{{filme}}" height ="700px"></div>
+     <div class="desc">
+         <p><strong>Ano:</strong> {{ano}}</p>
+         <p><strong>Diretor:</strong> {{diretor}}</p>
+         <p><strong>elenco:</strong> {{elenco}}</p>
+         <p><strong>Sinopse:</strong> {{sinopse}}</p>
+         <p><strong>curiosidades:</strong> {{curiosidades}}</p>
+     </div>
+     
+    </div>
+  {{/each}}
+ </div>
+
+<div class="inserirFilme">
   <div class="form">
     <form action="/inserir" method="post">
    <h3>INSIRA UM NOVO FILME</h3>

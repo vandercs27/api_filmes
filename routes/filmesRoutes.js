@@ -2,20 +2,34 @@ const express = require("express")
 const router = express.Router()
 const filmes = require("../models/Filmes")
 
-// Rota inicial - formulário de inserção
-router.get("/", (req, res) => {
-  res.render("inserir")
+// Rota inicial
+router.get("/", async (req, res) => {
+  res.render("home")
 })
 
+
+
+
+
+router.get("/inserir", (req, res) => {
+  res.render("inserir")
+})
 
 // Criar novo filme (inserção)
 router.post("/inserir", async (req, res) => {
   const { filme, ano, diretor, elenco, sinopse, curiosidades, imagem } = req.body
 
+   
+
   try {
-    await filmes.create({ filme, ano, diretor, elenco, sinopse, curiosidades, imagem })
-    req.flash("success_msg", "Filme cadastrado com sucesso!")
+      await filmes.create({ filme, ano, diretor, elenco, sinopse, curiosidades, imagem })
+   
+      req.flash("success_msg", "Filme cadastrado com sucesso!")
+    
+   
+   
     res.redirect("/")
+
   } catch (err) {
     console.log("Erro ao adicionar filme:", err)
     req.flash("error_msg", "Erro ao cadastrar filme.")
