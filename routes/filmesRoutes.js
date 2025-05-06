@@ -1,21 +1,47 @@
 const express = require("express")
 const router = express.Router()
 const filmes = require("../models/Filmes")
+const { raw } = require("mysql2")
 
 // Rota inicial
 router.get("/", async (req, res) => {
-  res.render("home")
+ 
+
+  try{
+    const recentesBrutos = await filmes.findAll({
+      order: [["ID", "DESC"]],
+      limit: 3,
+    });
+    
+    // Converter todos para objetos puros
+    const recentes = recentesBrutos.map(filme => filme.get({ plain: true }));
+
+    const destaqueBrutos  = await filmes.findOne(
+      {order: [["ID", "DESC"]], 
+      limit: 1})
+
+      const destaques = await destaqueBrutos.get({plain: true})
+   
+    
+    return res.render("home", { recentes,destaques });
+
+    
+}catch(err){
+    console.log("nao foi possivel encontrar o filme!", err)
+    return res.status(500).json({message: "erro ao buscar filme!"})
+  }
+ 
 })
 
 
 
-
+// Criar novo filme (inserção)
 
 router.get("/inserir", (req, res) => {
   res.render("inserir")
 })
 
-// Criar novo filme (inserção)
+
 router.post("/inserir", async (req, res) => {
   const { filme, ano, diretor, elenco, sinopse, curiosidades, imagem } = req.body
 
@@ -28,7 +54,7 @@ router.post("/inserir", async (req, res) => {
     
    
    
-    res.redirect("/")
+    res.redirect("/inserir")
 
   } catch (err) {
     console.log("Erro ao adicionar filme:", err)

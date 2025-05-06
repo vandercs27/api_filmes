@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>horror em foco</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/e57ae712d0.js" crossorigin="anonymous"></script>
 </head>
 
   
@@ -14,11 +15,33 @@
         
  
    
-    <div class="rotas">
+    
+        <div class="title">
+          <div class="redesSociais">
+        <p><i class="fa-solid fa-comments"></i>watsup</p>
+        <p><i class="fa-solid fa-f"></i>facebook</p>
+        <p><i class="fa-solid fa-hashtag"></i>instagram</p>
+     </div>
+        <div class="logo"> 
+             <img src="/imagens/logo.png" alt="">
+      
+        </div>
+    
+           
+     </div>
+     <div class="imagem_main">
+        <img src="/imagens/poster.png" alt="">
+      
+     </div>
+
+    
+   </div>
+   <div class="rotas">
         
          <div class="home">
-        <a href="/buscar">BUSCAR</a>
+        <a href="/"><i class="fa-solid fa-house"></i>HOME</a>
     </div>
+      
     
     <div class="inserir">
         <a href="/inserir">INSERIR</a>
@@ -34,15 +57,31 @@
     <div class="atualizar">
         <a href="/atualizar">ATUALIZAR</a>
     </div>
+      <div class="search">
+    
+ 
+    <form action="/buscar" method="post">
+    
+ <div class="search">
+    <div class="inputSearch">
+   <input type="search" name="filme" placeholder="digite o filme" id="filme"  required>
+  
+ </div>
+  
+   <div class="botaoSearch">
+     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> 
     </div>
-        <div class="title">
-        <div class="logo"> 
-             <img src="/imagens/logo.png" alt="">
-        </div>
-           
-     </div>
-   </div>
+ </div>
+  
+  {{#if error_msg}}
+  <div class="alert_error">{{error_msg}}</div>
+{{/if}}
+ 
+</form>
 
+ 
+    </div>
+   </div>
 
 
 <body>

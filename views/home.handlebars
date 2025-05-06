@@ -1,0 +1,32 @@
+<div class="part2">
+    <div class="posts_recentes">
+        <h2>posts recentes</h2>
+  
+       
+   {{#each recentes}}
+     <div class="post_recentes">
+        <p class="title_recentes"><strong>{{this.filme}}</strong></p>
+       <img src="/imagens/{{this.imagem}}" alt="" width="300px">
+       <p><strong>filme: </strong> {{ this.filme }}</p>
+       <p><strong>ano: </strong> {{ this.ano }}</p>
+       <p><strong>diretor: </strong> {{ this.diretor }}</p>
+      
+     </div>
+   {{/each}}  
+
+      
+    </div>
+    <div class="destaques">
+       <h2>destaques</h2>
+        <div class="post_destaque">
+        <p class="title_destaques"><strong>{{destaques.filme}}</strong></p>
+       <img src="/imagens/{{destaques.imagem}}" alt="" width="500px">
+       <p><strong>filme: </strong> {{ destaques.filme }}</p>
+       <p><strong>ano: </strong> {{ destaques.ano }}</p>
+       <p><strong>diretor: </strong> {{ destaques.diretor }}</p>
+      
+     </div>
+
+     
+    </div>
+</div>

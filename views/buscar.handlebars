@@ -1,31 +1,14 @@
-<div class="buscar">
-    
-  <div class="formBusca">
-    <form action="/buscar" method="post">
-    <h3>BUSQUE UM FILME AQUI</h3>
- <div class="inputBusca">
-   <input type="text" name="filme" placeholder="digite o filme" id="filme"  required>
-  
- </div>
-  <div class="btn">
-    <input type="submit" value="buscar">
-  </div>
-  {{#if error_msg}}
-  <div class="alert_error">{{error_msg}}</div>
-{{/if}}
- 
-</form>
 
-  </div>
   
  {{#if filmeEncontrado}}
- <div class="movieFound">
+ <div class="movieSearch">
     
      {{ filmeEncontrado }}
-     <h3>{{filmeEncontrado.filme}}</h3> 
+     
       <div class="filme">
-      
-      <div class="image"> <img src="/imagens/{{filmeEncontrado.imagem}}" alt="{{filme}}" height="500px"></div>
+      <h3>{{filmeEncontrado.filme}}</h3> 
+    <div class="filmeEncontrado">
+        <div class="image"> <img src="/imagens/{{filmeEncontrado.imagem}}" alt="{{filme}}"  ></div>
      <div class="desc">
        <p><strong>Ano:</strong> {{filmeEncontrado.ano}}</p>
        <p><strong>Diretor:</strong> {{filmeEncontrado.diretor}}</p>
@@ -34,6 +17,7 @@
        <p><strong>curiosidades:</strong> {{filmeEncontrado.curiosidades}}</p>
      
      </div>
+    </div>
      
     </div>
      {{/if}}
