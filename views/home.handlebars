@@ -1,32 +1,62 @@
 <div class="part2">
-    <div class="posts_recentes">
-        <h2>posts recentes</h2>
-  
-       
-   {{#each recentes}}
-     <div class="post_recentes">
-        <p class="title_recentes"><strong>{{this.filme}}</strong></p>
-       <img src="/imagens/{{this.imagem}}" alt="" width="300px">
-       <p><strong>filme: </strong> {{ this.filme }}</p>
-       <p><strong>ano: </strong> {{ this.ano }}</p>
-       <p><strong>diretor: </strong> {{ this.diretor }}</p>
-      
-     </div>
-   {{/each}}  
 
-      
-    </div>
+  <!--destaques-->
     <div class="destaques">
-       <h2>destaques</h2>
+      <div class="title-destaque"> <h2>destaques</h2></div>
+       
         <div class="post_destaque">
-        <p class="title_destaques"><strong>{{destaques.filme}}</strong></p>
-       <img src="/imagens/{{destaques.imagem}}" alt="" width="500px">
-       <p><strong>filme: </strong> {{ destaques.filme }}</p>
-       <p><strong>ano: </strong> {{ destaques.ano }}</p>
-       <p><strong>diretor: </strong> {{ destaques.diretor }}</p>
+       
+       <img src="/imagens/{{destaques.imagem}}" alt="" width="400px" height="">
+      <div class="info-destaque">
+         <p><strong>filme: </strong> <span>{{ destaques.filme }}</span></p>
+       <p><strong>ano: </strong> <span>{{ destaques.ano }}</span></p>
+       <p><strong>diretor: </strong> <span>{{ destaques.diretor }}</span></p>
+       <p><strong>comentários: </strong> <span>{{ destaques.comentarios }}</span></p>
+
+      </div>
       
      </div>
 
      
     </div>
+
+    <!-->recentes-->
+
+     <div class="title_recentes">
+          <h2>POSTS RECENTES</h2>
+        </div>
+       
+  <div class="posts_recentes">
+     {{#each recentes}}
+       <div class="post_recente">
+          <p class="title_recentes"><strong>{{this.filme}}</strong></p>
+            <img src="/imagens/{{this.imagem}}" alt="" width="250px">
+          <p><strong>filme: </strong> {{ this.filme }}</p>
+          <p><strong>ano: </strong> {{ this.ano }}</p>
+          <p><strong>diretor: </strong> {{ this.diretor }}</p>
+      
+       </div>
+
+     
+     {{/each}}  
+   </div>
+
+    <!--materias-->
+  <div class="materias">
+  <div class="title_materias">
+    <h2>outras matérias</h2>
+  </div>
+  <div class="materias-filmes">
+      {{#each materias}}
+
+      <div class="container_materias">
+        <p class="title_materias"><strong>{{this.filme}}</strong></p>
+       <img src="/imagens/{{this.imagem}}" alt="" width="300px" >
+       <p><strong> </strong> {{ this.materia }}</p>
+      </div>
+     
+      {{/each}}
+  </div>
 </div>
+</div>
+

@@ -1,0 +1,29 @@
+<div class="form-destaque">
+  <div class="form">
+    <form action="/destaque" method="post">
+   <h3>INSIRA UM NOVO DESTAQUE </h3>
+ <div class="inputs">
+   <input type="text" name="filme" placeholder="digite o filme" id="filme" required>
+  <input type="number" name="ano" placeholder="digite o ano do filme" id="ano" required>
+  <input type="text" name="diretor" placeholder="digite o diretor do filme" id="diretor" required>
+  <textarea placeholder="Digite a sinopse  aqui..." name="sinopse" id="sinopse" ></textarea>
+  <textarea placeholder="Digite as curiosidades aqui..." name="curiosidades" id="curiosidades"></textarea>
+   <textarea placeholder="Digite os comentários aqui..." name="comentarios" id="comentarios"></textarea>
+  <textarea placeholder="Digite a materia aqui..." name="materia" id="materia"></textarea>
+  <input type="text" name="elenco" placeholder="digite o elenco do filme" id="elenco" required>
+  <input type="text" name="imagem" placeholder="digite o caminho da imagem do filme" id="filme" required >
+ 
+ </div>
+  <div class="btn">
+    <input type="submit" value="enviar">
+  </div>
+      {{#if success_msg}}
+  <div class="alert_success">{{success_msg}}</div>
+{{/if}}
+
+{{#if error_msg}}
+  <div class="alert_error">{{error_msg}}</div>
+{{/if}}
+</form>
+  </div>
+</div>

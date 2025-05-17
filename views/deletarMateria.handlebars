@@ -1,0 +1,24 @@
+<div class="deletarNoticias">
+    
+  <div class="form">
+    <form action="/deletarMateria" method="post">
+   <h3>DELETE UMA materia AQUI</h3>
+ <div class="inputs">
+   <input type="text" name="filme" placeholder="digite o filme" id="filme"  required>
+  
+ </div>
+  <div class="btn">
+    <input type="submit" value="deletar">
+  </div>
+    {{#if success_msg}}
+  <div class="alert_success">{{success_msg}}</div>
+{{/if}}
+
+{{#if error_msg}}
+  <div class="alert_error">{{error_msg}}</div>
+{{/if}}
+ 
+</form>
+  </div>
+  
+</div>

@@ -35,7 +35,16 @@ const Filmes = db.define("Filmes", {
         
     },
     curiosidades: {
-        type: DataTypes.STRING(500  ),
+        type: DataTypes.STRING(500),
+        allowNull: false
+    },
+    comentarios: {
+        type: DataTypes.STRING(500),
+        allowNull: false
+    },
+
+    noticias: {
+        type: DataTypes.STRING(500),
         allowNull: false
     },
 
