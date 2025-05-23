@@ -16,6 +16,7 @@ body {
     display: flex;
     justify-content:center;
     margin: 0 2em;
+    
 }
 
 .imagem_main img {
@@ -23,7 +24,7 @@ body {
     width: 900px;
     mix-blend-mode: lighten;
     height: auto;
-   
+  
 }
 
 .title{
@@ -129,6 +130,7 @@ body {
     color: #fff;
     padding: 10px 20px;
     cursor: pointer;
+    
 }
 
 .rotas {

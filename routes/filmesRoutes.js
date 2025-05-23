@@ -208,11 +208,13 @@ router.post("/buscar", async (req, res) => {
 
   try {
     const filmeEncontrado = await filmes.findOne({ where: { filme }, raw: true })
+    const filmeDestaque = await Destaque.findOne({ where: { filme }, raw: true })
+    const filmeMateria = await Materia.findOne({ where: { filme }, raw: true })
    
 
-    if (filmeEncontrado) {
+    if (filmeEncontrado || filmeDestaque || filmeMateria) {
      console.log(filmeEncontrado.comentarios)
-     return res.render("buscar", { filmeEncontrado })
+     return res.render("buscar", { filmeEncontrado, filmeDestaque, filmeMateria })
       
     } else {
       req.flash("error_msg", "Filme não encontrado.")
